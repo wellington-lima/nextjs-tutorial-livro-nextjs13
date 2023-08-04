@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Tutorial book [`Next.js, The Full Stack React JS Framework`](https://www.amazon.com.br/Next-js-Stack-Framework-Development-Course-ebook/dp/B0B97NCTXY/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=11LT2EIP575VS&keywords=nextjs+13&qid=1691184528&sprefix=nextjs+13%2Caps%2C233&sr=8-1)
 
 ## Getting Started
 
