@@ -1,4 +1,4 @@
-import Link from "next/link";
+  import Link from "next/link";
 import path from "path";
 import fs from "fs";
 
@@ -23,8 +23,8 @@ export default function AllPostsPage() {
       <ul>
         {posts && 
           posts.map((post) => (
-            <li key={post.id}>
-             <Link href={`/posts/${post.id}`}>{post.title}</Link>
+            <li key={post.slug}>
+             <Link href={`/posts/${post.slug}`}>{post.title}</Link>
             </li>
           ))}
       </ul>
