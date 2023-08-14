@@ -43,7 +43,7 @@ export async function POST(request) {
     }).setProtectedHeader({alg}).setExpirationTime("48h").sign(secret);
 
     //Store the JWT in cookie
-    cookies().set("next-jwt", token {
+    cookies().set("next-jwt", token, {
       maxAge: 60*60*24*2, //2days
     });
 
