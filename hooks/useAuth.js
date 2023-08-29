@@ -1,5 +1,6 @@
 "use client";
 
+import { deleteCookie } from "cookies-next";
 import CONSTANTS from "@/app/constants";
 
 const useAuth = () => {
@@ -57,9 +58,14 @@ const useAuth = () => {
         });
     }
 
+    const signout = () => {
+        deleteCookie("next-jwt");
+    }
+
     return{
         signup,
         signin,
+        signout
     }
 }
 
