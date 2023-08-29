@@ -7,8 +7,7 @@ import { comparePasswords } from "@/utils/passoword-util";
 import CONSTANTS from "@/app/constants";
 
 export async function POST(request) {
-  const requestBody = await request.json();
-  const { email, password } = requestBody;
+  const { email, password } = await request.json();
 
   //connected db and get all users
   const filePath = path.join(process.cwd(), "data", "users.json");
@@ -17,14 +16,16 @@ export async function POST(request) {
 
   //Check if users email is valid
   const user = data.find((u) => u.email === email);
+
   if(!user) {
     return NextResponse.json({ 
       status: CONSTANTS.RESPONSE_STATUS.ERROR, 
       data: "Invalid email or password"},
       {status: 401}
     );
-
-    //Check if users password is valid
+  }    
+  
+  //Check if users password is valid
     const isPasswordValid = await comparePasswords(password, user.password);
     if(!isPasswordValid) {
       return NextResponse.json({
@@ -48,10 +49,9 @@ export async function POST(request) {
     });
 
     user.password = undefined;
-
+    
     return NextResponse.json({
       status: CONSTANTS.RESPONSE_STATUS.OK,
       data: { user }
     })
-  }
 }

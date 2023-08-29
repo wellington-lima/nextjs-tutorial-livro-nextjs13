@@ -31,11 +31,13 @@ const useAuth = () => {
     };
 
     const signin = ({ email, password }, callback) => {
+
         const requestBody = {
             email,
             password,
         };
-        fetch("api/auth/signin", {
+
+        fetch(" /api/auth/signin", {
             method: "POST",
             body: JSON.stringify(requestBody),
             headers: {
@@ -44,8 +46,6 @@ const useAuth = () => {
         })
         .then((data) => data.json())
         .then((response) => {
-            console.log(response);
-
             if(response.status === CONSTANTS.RESPONSE_STATUS.OK) {
                 if(callback) {
                     callback();
